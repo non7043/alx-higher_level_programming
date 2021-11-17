@@ -1,72 +1,46 @@
-# SQL - More queries
 
-In this project, I continued to practicing SQL queries, working with
-permissoins, joins, and constraints.
+# 0x0E. SQL - More queries
+This directory contains files created in response to tasks set forth in Holberton student project "0x0E. SQL - More queries". These SQL scripts demonstrate a further introduction to MySQL databases - including permission, more advanced queries, and joins. 
 
-## Usage :dolphin:
-
-* Scripts [3-force_name.sql](./3-force_name.sql) forward take the database to query from
-as a MySQL command line argument.
-
-```
-$ cat 3-force_name.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
-```
-
-## Tasks :page_with_curl:
-
-* **0. My privileges!**
-  * [0-privileges.sql](./0-privileges.sql): MySQL script that lists all privileges of the users
-  `user_0d_1` and `user_0d_2`.
-
-* **1. Root user**
-  * [1-create_user.sql](./1-create_user.sql): MySQL script that creates the user `user_0d_1` with
-  all privileges and password `user_0d_1_pwd`.
-
-* **2. Read user**
-  * [2-create_read_user.sql](./2-create_read_user.sql): MySQL script that creates the database
-  `hbtn_0d_2` and user `user_0d_2` with password `user_0d_2_pwd`.
-  * `user_0d_2` only has SELECT privilege on the database `hbtn_0d_2`.
-
-* **3. Always a name**
-  * [3-force_name.sql](./3-force_name.sql): MySQL script that creates the table `force_name`.
-  * Description:
-    * `id`: INT
-    * `name`: VARCHAR(256) (cannot be null)
-
-* **4. ID can't be null**
-  * [4-never_empty.sql](./4-never_empty.sql): MySQL script that creates the table `id_not_null`.
-  * Description:
-    * `id`: INT (default value = 1)
-    * `name`: VARCHAR(256)
-
-* **5. Unique ID**
-  * [5-unique_id.sql](./5-unique_id.sql): MySQL script that creates the table `unique_id`.
-  * Description:
-    * `id`: INT (default value = 1, must be unique)
-    * `name`: VARCHAR(256)
-
-* **6. States table**
-  * [6-states.sql](./6-states.sql): MySQL script that creates the database `hbtn_0d_usa`
-  with a table `states`.
-  * `states` description:
-    * `id`: INT (unique, auto-generated, cannot be null and is a primary key)
-    * `name`: VARCHAR(256) (cannot be null)
-
-* **7. Cities table**
-  * [7-cities.sql](./7-cities.sql): MySQL script that creates the database `hbtn_0d_usa`
-  with a table `cities`.
-  * `cities` description:
-    * `id`: INT (unique, auto-generated, cannot be null and is a primary key)
-    * `state_id`: INT (cannot be null, foreign key that references to id of the
-    `states` table)
-    * `name`: VARCHAR(256) (cannot be null)
-
-* **8. Cities of California**
-  * [8-cities_of_california_subquery.sql](./8-cities_of_california_subquery.sql):
-  MySQL script that lists all the cities of California that can be found in the
-  database `hbtn_0d_usa`, ordered by ascending city id.
-
-* **9. Cities by States**
-  * [9-cities_by_state_join.sql](./9-cities_by_state_join.sql): MySQL script that lists
-  all cities contained in the database `hbtn_0d_usa`, ordered by ascending city id.
-
+#### Task 0: [0-privileges.sql]
+* Write a script that lists all privileges of the MySQL users `user_0d_1` and `user_0d_2` on your server (in `localhost`)
+#### Task 1: [1-create_user.sql]
+* Write a script that creates the MySQL server user `user_0d_1`
+#### Task 2: [2-create_read_user.sql]
+* Write a script that creates the database `hbtn_0d_2` and the user `user_0d_2`
+#### Task 3: [3-force_name.sql]
+* Write a script that creates the table `force_name` on your MySQL server
+#### Task 4: [4-never_empty.sql]
+* Write a script that creates the table `id_not_null` on your MySQL server
+#### Task 5: [5-unique_id.sql]
+* Write a script that creates the table `unique_id` on your MySQL server
+#### Task 6: [6-states.sql]
+* Write a script that creates the database `hbtn_0d_usa` and the table `states` (in the database `hbtn_0d_usa`) on your MySQL server
+#### Task 7: [7-cities.sql]
+* Write a script that creates the database `hbtn_0d_usa` and the table `cities` (in the database `hbtn_0d_usa`) on your MySQL server.
+#### Task 8: [8-cities_of_california_subquery.sql]
+* Write a script that lists all the cities of California that can be found in the database `hbtn_0d_usa`
+#### Task 9: [9-cities_by_state_join.sql]
+* Write a script that lists all cities contained in the database `hbtn_0d_usa`
+#### Task 10: [10-genre_id_by_show.sql]
+* Write a script that lists all shows contained in `hbtn_0d_tvshows` that have at least one genre linked
+#### Task 11: [11-genre_id_all_shows.sql]
+* Write a script that lists all shows contained in the database `hbtn_0d_tvshows`
+#### Task 12: [12-no_genre.sql]
+* Write a script that lists all shows contained in `hbtn_0d_tvshows` without a genre linked
+#### Task 13: [13-count_shows_by_genre.sql]
+* Write a script that lists all genres from `hbtn_0d_tvshows` and displays the number of shows linked to each
+#### Task 14: [14-my_genres.sqlv]
+* Write a script that uses the `hbtn_0d_tvshows` database to lists all genres of the show `Dexter`
+#### Task 15: [15-comedy_only.sql]
+* Write a script that lists all Comedy shows in the database `hbtn_0d_tvshows`
+#### Task 16: [16-shows_by_genre.sql]
+* Write a script that lists all shows, and all genres linked to that show, from the database `hbtn_0d_tvshows`
+#### Task 17 (Advanced): [100-not_my_genres.sql]
+* Write a script that uses the `hbtn_0d_tvshows` database to list all genres not linked to the show `Dexter`
+#### Task 18 (Advanced): [101-not_a_comedy.sql]
+* Write a script that lists all shows without the genre `Comedy` in the database `hbtn_0d_tvshows`
+#### Task 19 (Advanced): [102-rating_shows.sql]
+* Write a script that lists all shows from `hbtn_0d_tvshows_rate` by their rating.
+#### Task 20 (Advanced): [103-rating_genres.sql]
+* Write a script that lists all genres in the database `hbtn_0d_tvshows_rate` by their rating
